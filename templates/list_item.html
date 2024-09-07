@@ -1,0 +1,153 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Item List - Ministore</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}"> <!-- Local CSS file -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Lato', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .header {
+            background-color: #fff;
+            padding: 15px 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .header .navbar-brand img {
+            height: 40px;
+        }
+        .item-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .item-item {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            padding: 15px;
+            text-align: center;
+            width: calc(33.333% - 20px);
+            box-sizing: border-box;
+        }
+        .item-item img {
+            max-width: 100%;
+            height: auto;
+            border-bottom: 1px solid #ddd;
+            margin-bottom: 10px;
+        }
+        .item-item h5 {
+            margin: 10px 0;
+            font-size: 16px;
+            font-weight: 500;
+        }
+        .item-item p {
+            font-size: 14px;
+            color: #555;
+        }
+        .pagination {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+        }
+        .pagination ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            gap: 10px;
+        }
+        .pagination ul li a {
+            text-decoration: none;
+            padding: 10px 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            color: #333;
+            font-size: 14px;
+        }
+        .pagination ul li a.active {
+            background-color: #333;
+            color: #fff;
+        }
+        .pagination ul li a.prev, .pagination ul li a.next {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="container">
+                <a class="navbar-brand" href="#">
+                    <img src="{% static 'images/main-logo.png' %}" alt="Ministore Logo">
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container">
+        <div class="item-grid">
+            <!-- Example Item -->
+            <div class="item-item">
+                <a href="#">
+                    <img src="{% static 'images/item-placeholder.png' %}" alt="Item Name">
+                    <h5>Item Name</h5>
+                    <p>$99.99</p>
+                </a>
+            </div>
+            <div class="item-item">
+                <a href="#">
+                    <img src="{% static 'images/item-placeholder.png' %}" alt="Item Name">
+                    <h5>Item Name</h5>
+                    <p>$99.99</p>
+                </a>
+            </div>
+            <div class="item-item">
+                <a href="#">
+                    <img src="{% static 'images/item-placeholder.png' %}" alt="Item Name">
+                    <h5>Item Name</h5>
+                    <p>$99.99</p>
+                </a>
+            </div>
+            <!-- Repeat the above block for more items -->
+        </div>
+
+        <!-- Pagination -->
+        <nav class="pagination">
+            <ul>
+                <li><a href="#" class="prev">First</a></li>
+                <li><a href="#" class="prev">Previous</a></li>
+                <li><a href="#" class="active">1</a></li>
+                <li><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+                <li><a href="#" class="next">Next</a></li>
+                <li><a href="#" class="next">Last</a></li>
+            </ul>
+        </nav>
+    </main>
+
+    <!-- Include your scripts -->
+    <script src="{% static 'js/jquery-1.11.0.min.js' %}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+    <script type="text/javascript" src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/plugins.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/script.js' %}"></script>
+</body>
+</html>

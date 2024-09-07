@@ -1,0 +1,75 @@
+{% extends "base.html" %} {% load static %} {% block content %}
+<body>
+  <br>
+  <br>
+  <br>
+    <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <img
+          src="{% static 'images/singel-product-item.jpg' %}"
+          alt="Product Image"
+          class="img-fluid"
+        />
+      </div>
+      <div class="col-md-6">
+        <h1 class="product-title">Product Name</h1>
+        <p class="product-price">$Price</p>
+        <p class="product-description">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin vitae
+          justo et ligula hendrerit malesuada.
+        </p>
+        <form action="#">
+          {% comment %} {% csrf_token %} {% endcomment %}
+          <div class="form-group">
+            <label for="quantity">Quantity:</label>
+            <input
+              type="number"
+              id="quantity"
+              name="quantity"
+              class="form-control"
+              value="1"
+              min="1"
+            />
+          </div>
+          <br>
+          <button type="submit" class="btn btn-primary">Add to Cart</button>
+        </form>
+      </div>
+    </div>
+    <div class="row mt-4">
+      <div class="col">
+        <h3>Related Products</h3>
+        <div class="row">
+          <!-- Repeat for each related product -->
+          <div class="col-md-4">
+            <div class="card">
+              <img
+                src="{% static 'images/product-item7.jpg' %}"
+                class="card-img-top"
+                alt="Related Product"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Related Product Name</h5>
+                <p class="card-text">$Price</p>
+                {% comment %}
+                <a
+                  href="{% url 'product_detail' related_product.id %}"
+                  class="btn btn-primary"
+                  >View Product</a
+                >
+                {% endcomment %}
+              </div>
+            </div>
+          </div>
+          <!-- End repeat -->
+        </div>
+      </div>
+    </div>
+  </div>
+  <br>
+  <br>
+
+</body>
+
+{% endblock %}
